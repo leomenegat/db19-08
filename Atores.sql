@@ -93,7 +93,27 @@ SELECT * FROM Filmes WHERE Ano>'2000'
 
 SELECT * FROM Filmes WHERE Duracao>100 AND Duracao<150 ORDER BY Duracao ASC
 
-SELECT * FROM Filmes WHERE Duracao>100 AND Duracao<150 ORDER BY Duracao ASC
+SELECT * FROM Filmes WHERE Ano=1997 ORDER BY Duracao DESC
+
+SELECT PrimeiroNome,UltimoNome FROM Atores WHERE Genero='M'
+
+SELECT PrimeiroNome,UltimoNome FROM Atores WHERE Genero='F' ORDER BY PrimeiroNome
+
+SELECT Filmes.Nome, Generos.Genero
+FROM Filmes 
+JOIN FilmesGenero ON Filmes.IdFilme= FilmesGenero.IdFilme 
+JOIN Generos ON Generos.Id= FilmesGenero.IdGenero 
+
+SELECT Filmes.Nome, Generos.Genero
+FROM Filmes 
+JOIN FilmesGenero ON Filmes.IdFilme= FilmesGenero.IdFilme 
+JOIN Generos ON Generos.Id= FilmesGenero.IdGenero 
+WHERE Generos.Genero='Aventura'
+
+SELECT Filmes.Nome, Atores.PrimeiroNome,Atores.UltimoNome, ElencoFilme.Papel
+FROM Filmes JOIN ElencoFilme ON Filmes.IdFilme = ElencoFilme.IdFilme
+JOIN Atores ON Atores.IdAtor = ElencoFilme.IdAtor;
+
 
 
 
